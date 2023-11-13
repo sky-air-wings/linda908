@@ -1,0 +1,40 @@
+outdir = Path("/root/foldingdiff-main/testcomparison")
+
+model_dir / "training_args.json"  57行源代码
+
+with open("/root/foldingdiff-main/wukevin/foldingdiff_cath/training_args.json") as source:    57行改过代码
+
+  # Load the model
+    model_snapshot_dir = outdir / "model_snapshot"
+    model = modelling.BertForDiffusionBase.from_dir(
+        args.model, copy_to=model_snapshot_dir
+    ).to(torch.device(args.device)) 338行代码源代码
+
+ 
+
+  model_snapshot_dir = outdir / "model_snapshot"
+    training_args_path = "/root/foldingdiff-main/wukevin/foldingdiff_cath/training_args.json"
+    model = modelling.BertForDiffusionBase.from_dir(
+    args.model, copy_to=model_snapshot_dir,
+    train_args_fname=os.path.join(model_snapshot_dir, training_args_path)
+).to(torch.device(args.device))344行改的代码
+
+mean_offset=None if not mean_file.exists() else np.load(mean_file)  86行代码
+
+mean_offset=None if not mean_file.exists() else np.load(mean_file,allow_pickle=True),改86行代码
+
+mean_file = model_dir / "training_mean_offset.npy"82行源代码
+
+mean_file =Path("/root/foldingdiff-main/wukevin/foldingdiff_cath/training_mean_offset.npy") 82行代码
+
+
+
+  if utils.is_huggingface_hub_id(args.model):
+        logging.info(f"Detected huggingface repo ID {args.model}")
+        dl_path = snapshot_download(args.model)  # Caching is automatic
+        assert os.path.isdir(dl_path)
+        logging.info(f"Using downloaded model at {dl_path}")
+        args.model = dl_path  302行源代码
+
+
+args.model = "/root/foldingdiff-main/wukevin/foldingdiff_cath"302行代码

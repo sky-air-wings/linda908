@@ -1,0 +1,14 @@
+from huggingface_hub import snapshot_download
+from torch.utils.data.dataloader import DataLoader
+from foldingdiff import modelling
+from foldingdiff import datasets as dsets
+import torch
+from foldingdiff.modelling import BertForDiffusion 
+
+
+m = modelling.BertForDiffusion.from_dir("foldingdiff_cath")
+clean_dset = dsets.CathCanonicalAnglesOnlyDataset(pad=128, trim_strategy='randomcrop')
+noised_dset = dsets.NoisedAnglesDataset(clean_dset, timesteps=1000, beta_schedule='cosine')
+dl = DataLoader(noised_dset, batch_size=32, shuffle=False)
+x = iter(dl).next()
+predicted_noise = m(x['corrupted'], x['t'], x['attn_mask'])

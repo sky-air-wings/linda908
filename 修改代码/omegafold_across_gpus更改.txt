@@ -1,0 +1,9 @@
+运行这个python omegafold_across_gpus.py proteinmpnn_residues/*.fasta --weights "/root/foldingdiff-main/release1.pt" -g 0
+
+
+python sctm.py -p /root/foldingdiff-main/sampled_pdb -f /root/foldingdiff-main/omegafold_predictions
+
+
+python sctm.py -p sampled_pdb -f omegafold_predictions
+
+

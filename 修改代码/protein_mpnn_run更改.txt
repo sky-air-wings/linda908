@@ -1,0 +1,5 @@
+PROTEINMPNN_SCRIPT = os.path.expanduser("~/software/ProteinMPNN/protein_mpnn_run.py") 12行代码
+
+PROTEINMPNN_SCRIPT = os.path.expanduser("/root/ProteinMPNN-main/protein_mpnn_run.py") 12行改为代码
+
+sampled_pdb放在pdb_to_residue_proteinmpnn.py文件下面

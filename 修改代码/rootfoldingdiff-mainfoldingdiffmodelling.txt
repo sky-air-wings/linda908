@@ -1,0 +1,17 @@
+        train_args_fname = os.path.join(dirname, "training_args.json")
+        with open(train_args_fname, "r") as source:
+            train_args = json.load(source)
+        config = BertConfig.from_json_file(os.path.join(dirname, "config.json")) 313行源代码
+
+
+
+ train_args_fname = "/root/foldingdiff-main/wukevin/foldingdiff_cath/training_args.json"
+ with open(train_args_fname, "r") as source:
+      train_args = json.load(source)
+ config = BertConfig.from_json_file(os.path.join(dirname, "config.json"))  313行改变代码
+
+
+train_args_fname: str = "", 306增加一个代码
+
+
+

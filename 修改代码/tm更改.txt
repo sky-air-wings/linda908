@@ -1,0 +1,23 @@
+在这个目录root@autodl-container-28ce11b552-218647f6:~/foldingdiff-main# for pdb_file in sampled_pdb/*.pdb; do
+>     base_name=$(basename "$pdb_file")
+>     target_file="omegafold_predictions1/$base_name"
+>     TMalign </root/foldingdiff-main/tools> -a "$pdb_file" "$target_file" >> /root/foldingdiff-main/tools/comparison_results.txt
+>     TMscore </root/foldingdiff-main/tools> -a "$pdb_file" "$target_file" >> /root/foldingdiff-main/tools/comparison_results.txt
+> done
+root@autodl-container-28ce11b552-218647f6:~/foldingdiff-main#
+
+
+
+
+cache_canonical_structures_cath_99e74e3b23300f21fd9a8fc153d762b3  4
+cache_canonical_structures_cath_bdf826cf1a19c3b323d9ed58ba7afb7c   5
+
+proteinmpnn_residues
+
+
+for pdb_file in sampled_pdb/*.pdb; do
+     base_name=$(basename "$pdb_file")
+     target_file="omegafold_predictions1/$base_name"
+     TMalign </root/foldingdiff-main/tools> -a "$pdb_file" "$target_file" >> /root/foldingdiff-main/tools/comparison_results.txt
+     TMscore </root/foldingdiff-main/tools> -a "$pdb_file" "$target_file" >> /root/foldingdiff-main/tools/comparison_results.txt
+done
